@@ -9,7 +9,7 @@ function onCanvasClick(e) {
     if (autoplay) {
         stopAutoplay();
     }
-    addShockwave(e.clientX, e.clientY);
+    addShockwave(e.pageX, e.pageY);
     window._arc3_x = framePointerPosition.x;
     window._arc3_y = framePointerPosition.y;
     getActionButton(6).click();
