@@ -19,6 +19,12 @@ let pointerPosition = {
     "y": 0
 };
 
+function elementsFromAbsolutePoint(pageX, pageY) {
+    const x = pageX - window.scrollX;
+    const y = pageY - window.scrollY;
+    return document.elementsFromPoint(x, y);
+}
+
 function setPointerPosition(pt) {
     pointer.style.left = `${pt.x}px`;
     pointer.style.top = `${pt.y}px`;
@@ -29,7 +35,7 @@ function setPointerPosition(pt) {
     pointerHand.style.display = 'none';
     pointerArrow.style.display = '';
 
-    let hoverElements = document.elementsFromPoint(pt.x, pt.y);
+    let hoverElements = elementsFromAbsolutePoint(pt.x, pt.y);
 
     let _vPointerOverCanvas = vPointerOverCanvas;
 
@@ -75,7 +81,7 @@ function movePointer(dst, delay) {
         "x": Math.round(dst.x),
         "y": Math.round(dst.y)
     };
-    if(p0.x === p3.x && p0.y === p3.y){
+    if (p0.x === p3.x && p0.y === p3.y) {
         pointerMoverTimeoutId = window.setTimeout(() => {
             window.clearTimeout(pointerMoverTimeoutId);
             pointerMoverTimeoutId = -1;
