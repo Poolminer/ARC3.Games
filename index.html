@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ARC3.Games</title>
+    <meta name="viewport" content="width=768, initial-scale=0.7">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div id="pointer">
+        <img id="pointer_hand" src="/images/hand.ico" style="position: absolute; left: -5px; top: -2px; display: none">
+        <img id="pointer_arrow" src="/images/arrow.ico" style="position: absolute; left: -8px; top: -4px;">
+    </div>
+    <a href="https://github.com/Poolminer/ARC3.Games" target="_blank">GitHub</a>&nbsp;•&nbsp;<a href="/api" target="_blank">API</a>
+    <h1>ARC3.Games</h1>
+    <p><a href="https://arcprize.org/arc-agi/3">ARC-AGI-3</a> and custom ARCEngine games</p>
+    <div class="center">
+        <div id="div1">
+            <div id="game_title" class="blob">
+                &nbsp;
+            </div>
+            <div id="top_button_container" style="display: inline-block;">
+                <div id="button_download_game" title="Download game" class="blob" style="cursor: pointer; font-size: small;">
+                    <img src="/images/download.ico">
+                </div>
+                <div id="button_copy_link" title="Copy link" class="blob" style="cursor: pointer; font-size: small;">
+                    <img src="/images/link.ico">
+                </div>
+            </div>
+            <span id="link_copied"></span>
+            <div id="game_level_info" class="blob right">
+                &nbsp;
+            </div>
+            <br>
+            <div id="authors"></div>
+            <div id="div2">
+            </div>
+            <div id="div3">
+                <table class="conttrols">
+                    <tr>
+                        <td></td>
+                        <td><button id="button_up" class="button arrow" type="button" disabled>&#9652;</button></td>
+                        <td></td>
+                        <td><button id="button_undo" class="button" type="button" disabled>UNDO</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="button_left" class="button arrow" type="button" disabled>&#9666;</button></td>
+                        <td></td>
+                        <td><button id="button_right" class="button arrow" type="button" disabled>&#9656;</button></td>
+                        <td>&nbsp;&nbsp;&nbsp;<button id="button_spacebar" class="button" type="button" disabled>SPACEBAR</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button id="button_down" class="button arrow" type="button" disabled>&#9662;</button></td>
+                        <td></td>
+                        <td><button id="button_click" class="button" type="button" disabled>CLICK</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="div4">
+                <button id="button_reset" class="button" type="button" disabled>RESET</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="font-size: 85%">
+        🤖 Can you build an AI agent to solve this task? <a href="https://arcprize.org/arc-agi/3">Get started.</a>
+    </div>
+    <br>
+    <div class="box">
+        <div class="titlecard">
+            Autoplay
+        </div>
+        <div style="font-size: smaller">
+            <p>
+                For each level you finish, your action sequence gets verified and saved to the open database if unique. Resets are not included — those clear your action sequence for that level.
+            </p>
+            <p>
+                By playing these games, you create valuable data for creating AI agents that can play such games.
+            </p>
+            <p>
+                Autoplay gets the shortest action sequence on record for a level, and plays it.
+            </p>
+            <br>
+            <button id="button_autoplay_all" class="button" type="button" disabled>AUTOPLAY ALL</button>
+            &nbsp;
+            <button id="button_autoplay_level" class="button" type="button" disabled>AUTOPLAY LEVEL</button>
+            <br>
+            <br>
+            <button id="button_autoplay_min" class="button" type="button">-</button>
+            <span id="autoplay_fps">6</span> speed
+            <button id="button_autoplay_plus" class="button" type="button">+</button>
+            <br>
+            <br>
+        </div>
+    </div>
+    <br>
+    <div class="box">
+        <div id="scorecard_title" class="titlecard">
+            Scorecard
+        </div>
+        <div id="scorecard_content" style="padding:5px; font-size: smaller">
+            How many actions does it take you to finish each level?
+            <br>
+            See how you compare to the best!
+        </div>
+    </div>
+    <br>
+    <div class="box">
+        <div class="titlecard">
+            Statistics
+        </div>
+        <div style="padding:5px; font-size: smaller">
+            <div style="text-align: left"><span id="games_stats">Loading...</span></div>
+            <br>
+            <span id="level_stats"></span>
+        </div>
+    </div>
+    <br>
+    <br>
+    <script src="/FileSaver.min.js"></script>
+    <script src="/jszip.min.js"></script>
+    <script type="py" src="/main.py" config="/pyscript.json"></script>
+    <script type="text/javascript" src="/mouse.js"></script>
+    <script type="text/javascript" src="/graphics.js"></script>
+    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript" src="/io.js"></script>
+    <script type="text/javascript" src="/library.js"></script>
+    <script type="text/javascript" src="/dom.js"></script>
+    <script type="text/javascript" src="/events.js"></script>
+    <script type="text/javascript" src="/scorecard.js"></script>
+    <script type="text/javascript" src="/init.js"></script>
+    <script type="module" src="https://pyscript.net/releases/2026.3.1/core.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ARC3.Games</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    #table {
+      font-family: serif;
+      font-size: 1.2em;
+      color: black;
+      text-shadow: 0 0;
+      background: linear-gradient(66deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 100%);
+    }
+
+    a {
+      color: #28157e;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="center">
+    <table id="table">
+      <tr>
+        <th>Action</th>
+        <th>Required Parameters</th>
+        <th>Optional Parameters</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+
+      <tr>
+        <td>getTopSequences</td>
+        <td><i>gameId</i><br><br><i>level</i></td>
+        <td><i>order</i> ("ASC" or "DESC", default "ASC")<br><br><i>limit</i> (maximum number of results, default no
+          limit)</td>
+        <td>
+          Get the top sequences on record of a game's level, ordered by action count.
+          <br>
+          <br>
+          A sequence is represented as an array of action ids, except for clicks, which are represented as an array with the <i>x</i> and <i>y</i> value respectively.
+          <br>
+          <br>
+          Sequences are guaranteed to finish the level, and not to contain resets, unavailable actions, or out of bounds clicks.
+        </td>
+        <td>
+          <span class="curl">
+            curl -X POST https://arc3.games/api.php \<br>
+            -H "Content-Type: application/x-www-form-urlencoded" \<br>
+            -d 'action=getTopSequences&gameId=ls20-9607627b&level=1&order=ASC&limit=3'
+          </span>
+          <br>
+          <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>getGameStats</td>
+        <td></td>
+        <td><i>gameId</i></td>
+        <td>Get the number of action sequences on record for a specified game or all games.</td>
+        <td>
+          <span class="curl">
+            curl -X POST https://arc3.games/api.php \<br>
+            -H "Content-Type: application/x-www-form-urlencoded" \<br>
+            -d 'action=getGameStats&gameId=ls20-9607627b'
+          </span>
+          <br>
+          <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>getLevelStats</td>
+        <td><i>gameId</i></td>
+        <td><i>level</i></td>
+        <td>Get the number of action sequences on record for a specified level of a game or all levels of that game.
+        </td>
+        <td>
+          <span class="curl">
+            curl -X POST https://arc3.games/api.php \<br>
+            -H "Content-Type: application/x-www-form-urlencoded" \<br>
+            -d 'action=getLevelStats&gameId=ls20-9607627b&level=1'
+          </span>
+          <br>
+          <br>
+        </td>
+      </tr>
+
+      <tr>
+        <td>getStatsSum</td>
+        <td></td>
+        <td></td>
+        <td>Get the total number of games, levels and sequences on record.
+        </td>
+        <td>
+          <span class="curl">
+            curl -X POST https://arc3.games/api.php \<br>
+            -H "Content-Type: application/x-www-form-urlencoded" \<br>
+            -d 'action=getStatsSum'
+          </span>
+          <br>
+          <br>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+  <script>
+    let cells = document.getElementsByClassName('curl');
+
+    for (let cell of cells) {
+      let button = document.createElement('button');
+      button.className = 'button';
+      button.style.fontSize = 'smaller';
+      button.innerText = 'copy';
+
+      let span = document.createElement('span');
+
+      let link_timed_out = false;
+
+      button.addEventListener('click', () => {
+        let curlCommand = cell.parentElement.firstElementChild.innerText;
+
+        navigator.clipboard.writeText(curlCommand).then(() => {
+          span.innerHTML = '&nbsp;&nbsp;Command copied';
+
+          link_timed_out = true;
+
+          window.setTimeout(() => {
+            span.innerText = '';
+            link_timed_out = false;
+          }, 2000);
+        });
+      });
+      cell.parentElement.appendChild(button);
+      cell.parentElement.appendChild(span);
+    }
+  </script>
+</body>
+
+</html>

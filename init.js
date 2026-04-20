@@ -1,0 +1,2 @@
+createCanvas();
+createGallery();

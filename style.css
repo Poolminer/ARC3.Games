@@ -1,0 +1,219 @@
+html, body {
+    text-align: center;
+    margin: 5px;
+    color: #57C785;
+    font-family: Tronica Mono, monospace;
+    background-color: #57588f;
+    text-shadow: 2px 2px #404069;
+}
+a {
+    color: #51a8d6;
+}
+h1 {
+    margin-bottom: 0;
+}
+#div1 {
+    text-align: left;
+    text-shadow: 0 0;
+    color: #000000;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #3e6348;
+    background: linear-gradient(66deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 100%);
+    padding: 20px;
+    box-shadow: 10px 10px 15px #404069;
+}
+#div2 {
+    color: #FFFFFF;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #bcccc0;
+    padding: 0; 
+    margin-bottom: 20px;
+    width: 512px;
+    height: 512px;  
+    background: black;
+}
+#div3 {
+    display: inline-block;
+}
+#div4 {
+    padding-right: 20px;
+    float: right;
+}
+.blob {
+    background: linear-gradient(66deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 100%);
+    padding: 5px;
+    margin: -2px;
+    border-style: solid;
+    border-color: #3e6348;
+    border-width: 2px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+}
+table {
+    border-collapse: collapse;
+}
+#scorecard_table {
+    margin: auto;
+
+    td, th {
+        border: 1px solid #8a7fad;
+        padding: 8px;
+    }
+}
+td {
+    border: 0;
+    text-align: center;
+    padding: 8px;
+}
+button:focus {
+    outline: none;
+}
+.button {
+    position: relative;
+    padding: 0.5em 1em;
+    border-style: outset;
+    border-color: #8f8f8f;
+    border-width: 2px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    margin: -3px;
+    font-size: 100%;
+    font-weight: bold;
+    color: #d3d3d3;
+    background-color: #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.button.small {
+    font-size: small;
+}
+button:disabled {
+    background-color: #5f5f5f;
+    opacity: 0.5;
+    cursor: unset;
+}
+.button:active {
+  top: 1px;
+  left: 1px;
+  box-shadow: none;
+  border-style: inset;
+  transform: translateY(2px);
+}
+.button.active {
+  top: 1px;
+  left: 1px;
+  box-shadow: none;
+  border-style: inset;
+  transform: translateY(2px);
+}
+.arrow {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
+.right {
+    float: right;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery {
+    line-height: 0;
+}
+.thumbnail {
+    line-height: normal;
+    display: inline-block;
+    margin: 4px;
+    padding-bottom: 18px;
+    width: 110px;
+    height: 110px;
+    background-size: contain;
+    border-style: solid;
+    border-color: #8a7fad;
+    border-width: 2px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.namecard {
+    color: #c9c9c9;
+    background-color: #8a7fad;
+    text-shadow: 0 0;
+}
+.box {
+    background-color: #494a77;
+    line-height: normal;
+    display: inline-block;
+    margin: 4px;
+    width: 512px;
+    background-size: contain;
+    border-style: solid;
+    border-color: #8a7fad;
+    border-width: 2px;
+}
+.titlecard {
+    color: #c9c9c9;
+    background-color: #8a7fad;
+    text-shadow: 0 0;
+}
+.canvas {
+    position: absolute;
+    left: 20px;
+}
+#init_text {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+#pointer {
+    position: absolute;
+    left: -32px;
+    top: -32px;
+    z-index: 1;
+}
+.shockwave {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    pointer-events: none;
+
+    transform: translate(-50%, -50%) scale(0);
+    animation: shockwave 250ms ease-out forwards;
+}
+
+.shockwave.red {
+    border: 1.5px solid rgba(255, 0, 0, 0.85);
+}
+
+@keyframes shockwave {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.9;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+#authors {
+    opacity: 0.5;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    a {
+      color: #28157e;
+    }
+}

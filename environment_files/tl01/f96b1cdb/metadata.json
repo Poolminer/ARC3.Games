@@ -1,0 +1,17 @@
+{
+  "game_id": "tl01-f96b1cdb",
+  "title": "TL01",
+  "default_fps": 30,
+  "tags": [
+      "Tutorial"
+  ],
+  "baseline_actions": [
+      3,
+      12,
+      13,
+      7,
+      17
+  ],
+  "local_dir": "environment_files/tl01/f96b1cdb",
+  "date_downloaded": "2026-04-15T07:44:16.674497+00:00"
+}
