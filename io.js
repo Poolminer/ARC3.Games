@@ -134,6 +134,11 @@ function submitSequence(gameId, sequence, gameState) {
             console.log(JSON.parse(xhr.responseText));
         } else {
             console.log(`Error: ${xhr.status}`);
+            if(xhr.status === 502){
+                window.setTimeout(() => {
+                    submitSequence(gameId, sequence, gameState);
+                }, 3000);
+            }
         }
     };
     xhr.send(`gameId=${gameId}&sequence=${JSON.stringify(sequence)}&gameState=${gameState}`);
