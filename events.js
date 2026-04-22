@@ -165,7 +165,7 @@ if(!window._arc3_offline){
                 document.getElementById('button_autoplay_level').classList.remove('active');
                 document.getElementById('button_autoplay_all').classList.add('active');
             }
-        } else if(window._arc3_busy){
+        } else if(!window._arc3_busy){
             autoplayAll = true;
             document.getElementById('button_autoplay_all').classList.add('active');
             startAutoplay();
